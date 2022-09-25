@@ -1,11 +1,10 @@
-// multistage
 pipeline {
     agent any
 
         stages {
             stage('Source') {
                 steps {
-                    git url: 'https://github.com/Bangaruyogi77/Mysql-spring-demo.git'
+                    git url: 'https://github.com/Jhansi1910/springmysql.git'
                 }
             }
             stage('Build') {
@@ -21,15 +20,15 @@ pipeline {
                     script {
                         def mvnHome = tool 'M3'
                         withSonarQubeEnv() {
-                            bat "${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=mysql-sonar"
+                            bat "${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=mysql"
                         }
                     }
                 }
             }
-            
+    
             stage('Packaging') {
                 steps {
-                    step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
+                    step([$class: 'ArtifactArchiver', artifacts: '*/target/.jar', fingerprint: true])
                 }
             }
             
