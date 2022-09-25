@@ -4,7 +4,7 @@ pipeline {
         stages {
             stage('Source') {
                 steps {
-                    git url: 'https://github.com/Jhansi1910/springmysql.git'
+                    git url: 'https://github.com/Bangaruyogi77/Mysql-spring-demo.git'
                 }
             }
             stage('Build') {
@@ -20,7 +20,7 @@ pipeline {
                     script {
                         def mvnHome = tool 'M3'
                         withSonarQubeEnv() {
-                            bat "${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=mysql"
+                            bat "${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=mysql-sonar"
                         }
                     }
                 }
