@@ -36,6 +36,7 @@ stages:
         mavenPomFile: 'pom.xml'
     - task: AzureMysqlDeployment@1
       inputs:
+        azureSubscription: 'BFSI_LGI_DevOps_Training_POC (f3f0b402-1498-4537-9728-704a780011a0)'
         ServerName: 'yogi1.mysql.database.azure.com'
         SqlUsername: 'yogidbuser@yogi1.mysql.database.azure.com'
         SqlPassword: 'Yogimysql@123'
