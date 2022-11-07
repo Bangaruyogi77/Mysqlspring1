@@ -20,6 +20,15 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    - task: AzureMysqlDeployment@1
+      inputs:
+        azureSubscription: 'BFSI_LGI_DevOps_Training_POC (f3f0b402-1498-4537-9728-704a780011a0)'
+        ServerName: 'yogimysql.mysql.database.azure.com'
+        DatabaseName: 'bangaru'
+        SqlUsername: 'bangaruyogi@yogimysql'
+        SqlPassword: '#Yogi7777'
+        TaskNameSelector: 'SqlTaskFile'
+        IpDetectionMethod: 'AutoDetect'
     - task: Docker@2
       displayName: Build an image
       inputs:
