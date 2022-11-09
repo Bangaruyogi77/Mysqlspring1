@@ -25,7 +25,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=example
       - MYSQL_DATABASE=yogidb
-      - MYSQL_USER=bangaru
+      - MYSQL_USER=bangaru@yogicontainer.mysql.database.azure.com
       - MYSQL_PASSWORD=bangaru@123
     networks:
       - spring-mysql  
