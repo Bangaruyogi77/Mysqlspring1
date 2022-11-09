@@ -24,9 +24,9 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=example
-      - MYSQL_DATABASE=lngdb
-      - MYSQL_USER=lngdb
-      - MYSQL_PASSWORD=lngdb
+      - MYSQL_DATABASE=yogidb
+      - MYSQL_USER=bangaru
+      - MYSQL_PASSWORD=bangaru@123
     networks:
       - spring-mysql  
     ports:
